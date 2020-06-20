@@ -1,4 +1,4 @@
-FROM golang:1.14.4-alpine
+FROM golang:1.14.4-alpine as Build
 ARG VERSION='4.25.0'
 RUN apk add --no-cache git build-base
 RUN wget -O - https://github.com/v2ray/v2ray-core/archive/v${VERSION}.tar.gz | tar -xz -C / && mv /v2ray-core-${VERSION} /v2ray
